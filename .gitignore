@@ -2,6 +2,7 @@
 Thumbs.db
 dist/
 build/
+.vscode
 main
 a.out
 
