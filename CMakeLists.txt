@@ -4,16 +4,17 @@ project(raylib_test CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
 set(SOURCE_FILES
     main.cpp
 )
 
 add_subdirectory(raylib)
+add_subdirectory(fmt)
 
 add_executable(main ${SOURCE_FILES})
 
-target_link_libraries(main raylib)
+target_link_libraries(main raylib fmt)
+
 
 if (APPLE)
     target_link_libraries(main "-framework IOKit")
