@@ -15,8 +15,6 @@ https://creativecommons.org/licenses/by/3.0/
 
 namespace fs = std::filesystem;
 
-bool running = true;
-
 int window_width = 1200;
 int window_height = 600;
 
@@ -195,11 +193,6 @@ void clear_powerups() {
 
 void update() {
     float time = GetFrameTime();
-
-    if (IsKeyPressed(KEY_ESCAPE)) {
-        fmt::print("Escape is pressed, quitting...\n");
-        running = false;
-    }
 
     if (start_game == false && IsKeyPressed(KEY_ENTER)) {
         start_game = true;
@@ -430,7 +423,9 @@ int main() {
 
     init();
 
-    while (!WindowShouldClose() || running) {
+    SetExitKey(KEY_ESCAPE);
+
+    while (!WindowShouldClose()) {
         UpdateMusicStream(music);
         update();
         draw();
