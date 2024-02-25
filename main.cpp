@@ -69,10 +69,8 @@ void init() {
     InitWindow(window_width, window_height, "Bryan's First Game");
     InitAudioDevice();
 
-    boing = LoadSound("boing2.wav");
-
-    fs::path music_path = "Powerful-Trap.mp3";
-    music = LoadMusicStream(fs::absolute(music_path).c_str());
+    boing = LoadSound("assets/boing2.wav");
+    music = LoadMusicStream("assets/Powerful-Trap.mp3");
 
     int gap = 20;
     paddle_x = window_center_x() - (paddle_width / 2);
